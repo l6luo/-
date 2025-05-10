@@ -1,5 +1,5 @@
 <!--pages/天气预报小程序/天气预报小程序.wxml-->
-<text>pages/天气预报小程序/天气预报小程序.wxml</text>
+<text>天气预报小程序</text>
 <view class="container">
   <view class="search-box">
     <input placeholder="请输入城市名称" bindinput="inputCity"/>
