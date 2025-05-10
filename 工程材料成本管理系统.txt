@@ -107,4 +107,4 @@ BEGIN
     AND supplier_id = NEW.supplier_id
     AND is_current = TRUE;
 END//
-DELIMITER ;
+
