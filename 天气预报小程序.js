@@ -39,11 +39,21 @@ Page({
 const cloud = require('wx-server-sdk')
 cloud.init()
 
-exports.main = async (event) =>{
-  const {city} = event
-  const res=await axios.get(`https://api.qweather.com/v7/weather/now?location=${city}&key= `)
-  return res.data
-} 
+exports.main = async (event, context) => {
+  const { city } = event
+  try {
+    const res = await axios.get(`https://api.qweather.com/v7/weather/now`, {
+      params: {
+        location: city,
+        key: '' // 替换为实际的和风天气API key
+      }
+    })
+    return res.data
+  } catch (error) {
+    console.error(error)
+    return { error: '获取天气信息失败' }
+  }
+}
 // 小程序端调用
 wx.cloud.callFunction({
   name:'weather',
